@@ -5,8 +5,9 @@ import "truffle/DeployedAddresses.sol";
 import "../contracts/DriveChain.sol";
 
 contract TestDriveChain {
-  function testInitialBalanceUsingDeployedContract() {
-    DriveChain driveChain = DriveChain(DeployedAddresses.DriveChain());
+   DriveChain driveChain = DriveChain(DeployedAddresses.DriveChain());
+   
+  function testInitialBalanceUsingDeployedContract() public {
     uint expected = 1;
     Assert.equal(driveChain.requestLift(1, 1, 2, 2, 500), expected, "Index should start at 1");
   }
